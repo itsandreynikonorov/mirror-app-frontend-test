@@ -1,0 +1,11 @@
+body {
+  font-family: var(--body-text);
+  --heading-font: 'Instrument Serif', serif;
+  --body-text: 'Inter', sans-serif;
+  color: #2b2b2b;
+  background-color: #f6f6f6;
+}
+
+.app-title {
+    font-family: var(--heading-font);
+}

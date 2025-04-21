@@ -1,0 +1,69 @@
+/* Базовые стили карточки */
+.post-card {
+  container-type: inline-size;
+  container-name: post-card;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid #dedede;
+  border-radius: 0.5rem;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+/* Заголовок карточки */
+.card-header {
+  margin-bottom: 0.75rem;
+}
+
+.username {
+  font-weight: 700;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Основной контент */
+.card-content {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.post-text {
+  /* display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical; */
+  overflow: hidden;
+  line-height: 1.5;
+}
+
+/* Футер с метаданными */
+.card-footer {
+  margin-top: auto;
+}
+
+/* Базовые стили для контейнера статистики */
+.stats-container {
+  display: flex;
+  font-size: 0.875rem;
+  /* color: #64748b; */
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.stat-item {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stat-item.date {
+  text-align: right;
+}

@@ -1,0 +1,43 @@
+/* Стили для контейнера постов */
+.posts-container {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.posts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.posts-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  /* color: #111827; */
+  margin: 0;
+}
+
+.loading-indicator {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.posts-grid-wrapper {
+  margin-bottom: 2rem;
+}
+
+.posts-navigation {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.posts-empty {
+  text-align: center;
+  padding: 3rem 0;
+  color: #6b7280;
+}

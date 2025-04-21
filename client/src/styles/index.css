@@ -1,0 +1,13 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import './base/typography.css';
+@import './layout/app-layout.css';
+@import './components/settings-panel.css';
+@import './components/posts-container.css';
+@import './components/post-card.css';
+@import './components/post-card-hover.css';
+@import './components/navigation.css';
+@import './utils/container-queries.css';
+@import './utils/media-queries.css';

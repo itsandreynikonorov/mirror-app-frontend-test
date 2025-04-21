@@ -1,0 +1,60 @@
+/* Стили для hover-версии карточки */
+/* .post-card.hover-card .card-footer {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  border-top: 1px solid #e5e7eb;
+} */
+
+.post-card.hover-card:hover .card-footer {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Для улучшения UX добавим небольшой эффект подъема при наведении */
+.post-card.hover-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Расширенные стили для hover-карточки */
+.post-card.hover-card {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.post-card.hover-card .card-footer {
+  opacity: 0;
+  transform: translateY(100%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* background-color: rgba(255, 255, 255, 0.95); */
+  /* backdrop-filter: blur(4px); */
+  padding: 1rem;
+  transition: 
+    opacity 0.3s ease-in-out;
+  /* transition: 
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out; */
+  /* box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); */
+  /* border-top: 1px solid #dedede; */
+}
+
+.post-card.hover-card:hover .card-footer {
+  opacity: 1;
+  /* backdrop-filter: blur(4px); */
+  transform: translateY(0);
+}
+
+/* Обеспечение достаточного пространства для появляющегося футера */
+.post-card.hover-card .card-content {
+  padding-bottom: 2rem;
+}
