@@ -87,7 +87,9 @@ const SettingsPanel: React.FC = () => {
         </div>
 
         <div className="mb-5 last:mb-0">
-          <h3 className="text-base font-semibold mb-2 text-gray-600">Template</h3>
+          <h3 className="text-base font-semibold mb-2 text-gray-600">
+            Template
+          </h3>
           <ul className="list-none p-0 m-0">
             <li className="py-1.5 text-gray-500 text-sm border-b border-gray-100 last:border-b-0">
               Type: {settings.template}
@@ -96,7 +98,9 @@ const SettingsPanel: React.FC = () => {
         </div>
 
         <div className="mb-5 last:mb-0">
-          <h3 className="text-base font-semibold mb-2 text-gray-600">Navigation</h3>
+          <h3 className="text-base font-semibold mb-2 text-gray-600">
+            Navigation
+          </h3>
           <ul className="list-none p-0 m-0">
             <li className="py-1.5 text-gray-500 text-sm border-b border-gray-100 last:border-b-0">
               Type: {settings.navigation}
