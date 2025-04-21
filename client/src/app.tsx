@@ -6,16 +6,16 @@ import PostsContainer from "./components/PostsContainer";
 const App: React.FC = () => {
   return (
     <SettingsProvider>
-      <div className="app-container">
-        <header className="app-header">
-          <h1 className="app-title">Mirror App</h1>
+      <div className="max-w-screen min-h-full mx-auto p-4">
+        <header className="mb-8 pb-4 border-b border-gray-200">
+          <h1 className="text-3xl font-bold font-serif">Mirror App</h1>
         </header>
 
-        <main className="app-content">
-          <aside className="settings-sidebar">
+        <main className="grid lg:grid-cols-[300px_1fr] grid-cols-1 gap-8">
+          <aside className="sticky top-4 h-fit lg:mb-0 mb-8">
             <SettingsPanel />
           </aside>
-          <section className="posts-section">
+          <section className="min-w-0">
             <PostsContainer />
           </section>
         </main>

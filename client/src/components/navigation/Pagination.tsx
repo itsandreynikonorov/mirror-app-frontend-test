@@ -35,9 +35,9 @@ const Pagination: React.FC<PaginationProps> = ({
   const pageRange = getPageRange();
 
   return (
-    <div className="pagination flex justify-center items-center mt-6 space-x-2">
+    <div className="flex justify-center items-center mt-6 space-x-2">
       <button
-        className="pagination-btn px-3 py-1 border rounded"
+        className="px-3 py-1 border rounded"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1 || isLoading}
       >
@@ -47,7 +47,7 @@ const Pagination: React.FC<PaginationProps> = ({
       {pageRange.map((page) => (
         <button
           key={page}
-          className={`pagination-btn px-3 py-1 border rounded ${
+          className={`px-3 py-1 border rounded ${
             page === currentPage ? "bg-blue-500 text-white" : ""
           }`}
           onClick={() => onPageChange(page)}
@@ -58,7 +58,7 @@ const Pagination: React.FC<PaginationProps> = ({
       ))}
 
       <button
-        className="pagination-btn px-3 py-1 border rounded"
+        className="px-3 py-1 border rounded"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages || isLoading}
       >

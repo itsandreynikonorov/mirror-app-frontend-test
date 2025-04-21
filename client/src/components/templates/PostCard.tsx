@@ -16,26 +16,29 @@ const PostCard: React.FC<PostCardProps> = ({ post, template = "basic" }) => {
   const isHoverTemplate = template === "hover";
 
   return (
-    <div className={`post-card ${isHoverTemplate ? "hover-card" : ""}`}>
-      <div className="card-header">
-        <span className="username">{post.user?.username || "User"}</span>
+    <div 
+      className={`group flex md:flex-col flex-row p-4 border border-gray-300 rounded-lg bg-white shadow-sm h-full overflow-hidden relative 
+        transition-transform ${isHoverTemplate ? 'hover:translate-y-[-4px] hover:shadow-md cursor-pointer pb-16' : ''}`}
+    >
+      <div className="mb-3">
+        <span className="font-bold truncate block">{post.user?.username || "User"}</span>
       </div>
-      <div className="card-content">
-        <p className="post-text">{post.caption}</p>
+      <div className="flex-grow mb-4">
+        <p className="overflow-hidden leading-6">{post.caption}</p>
       </div>
-      <div className="card-footer">
-        <div className="stats-container">
-          <div className="likes-comments-container flex flex-row gap-4">
-            <div className="stat-item likes flex flex-row items-center">
+      <div className={`${isHoverTemplate ? 'absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white p-4' : 'mt-auto'}`}>
+        <div className="flex flex-col justify-between gap-4 text-sm md:gap-2">
+          <div className="flex flex-row gap-2 min-w-0 overflow-hidden text-ellipsis whitespace-nowrap">
+            <div className="flex flex-row items-center">
               <HeartIcon className="h-4 w-4 mr-1 text-gray-500" />
               {post.likes}
             </div>
-            <div className="stat-item comments flex flex-row items-center">
+            <div className="flex flex-row items-center">
               <ChatBubbleLeftIcon className="h-4 w-4 mr-1 text-gray-500" />
               {post.comments}
             </div>
           </div>
-          <div className="stat-item date flex flex-row items-center ml-auto">
+          <div className={`flex flex-row items-center min-w-0 overflow-hidden text-ellipsis whitespace-nowrap`}>
             <CalendarIcon className="h-4 w-4 mr-1 text-gray-500" />
             {formatDate(post.date)}
           </div>

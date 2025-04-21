@@ -48,15 +48,19 @@ const SettingsPanel: React.FC = () => {
   }, [refreshSettings]);
 
   if (!settings) {
-    return <div className="settings-panel-loading">Refreshing settings...</div>;
+    return (
+      <div className="bg-white rounded-lg shadow-sm p-6 text-center text-gray-500 border border-gray-200">
+        Refreshing settings...
+      </div>
+    );
   }
 
   return (
-    <div className="settings-panel">
-      <h2 className="settings-title">Settings</h2>
+    <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
+      <h2 className="text-xl font-semibold mb-6">Settings</h2>
 
       <button
-        className="refresh-button flex flex-row items-center justify-center"
+        className="w-full bg-blue-500 text-white border-none py-3 px-4 rounded-md font-medium cursor-pointer mb-6 transition-colors hover:bg-blue-600 disabled:bg-blue-300 disabled:cursor-not-allowed flex flex-row items-center justify-center"
         onClick={handleRefresh}
         disabled={isLoading || isAnimating}
       >
@@ -66,31 +70,37 @@ const SettingsPanel: React.FC = () => {
         {isAnimating ? "Refreshing..." : "Refresh settings"}
       </button>
 
-      <div className="settings-details">
-        <div className="setting-group">
-          <h3 className="setting-group-title">Layout</h3>
-          <ul className="settings-list">
-            <li>Type: {settings.layout.current}</li>
-            <li>
+      <div className="border-t border-gray-200 pt-6">
+        <div className="mb-5 last:mb-0">
+          <h3 className="text-base font-semibold mb-2 text-gray-600">Layout</h3>
+          <ul className="list-none p-0 m-0">
+            <li className="py-1.5 text-gray-500 text-sm border-b border-gray-100 last:border-b-0">
+              Type: {settings.layout.current}
+            </li>
+            <li className="py-1.5 text-gray-500 text-sm border-b border-gray-100 last:border-b-0">
               Columns: {settings.layout.params[settings.layout.current].columns}
             </li>
-            <li>
+            <li className="py-1.5 text-gray-500 text-sm border-b border-gray-100 last:border-b-0">
               Rows: {settings.layout.params[settings.layout.current].rows}
             </li>
           </ul>
         </div>
 
-        <div className="setting-group">
-          <h3 className="setting-group-title">Template</h3>
-          <ul className="settings-list">
-            <li>Type: {settings.template}</li>
+        <div className="mb-5 last:mb-0">
+          <h3 className="text-base font-semibold mb-2 text-gray-600">Template</h3>
+          <ul className="list-none p-0 m-0">
+            <li className="py-1.5 text-gray-500 text-sm border-b border-gray-100 last:border-b-0">
+              Type: {settings.template}
+            </li>
           </ul>
         </div>
 
-        <div className="setting-group">
-          <h3 className="setting-group-title">Navigation</h3>
-          <ul className="settings-list">
-            <li>Type: {settings.navigation}</li>
+        <div className="mb-5 last:mb-0">
+          <h3 className="text-base font-semibold mb-2 text-gray-600">Navigation</h3>
+          <ul className="list-none p-0 m-0">
+            <li className="py-1.5 text-gray-500 text-sm border-b border-gray-100 last:border-b-0">
+              Type: {settings.navigation}
+            </li>
           </ul>
         </div>
       </div>

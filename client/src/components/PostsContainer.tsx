@@ -42,12 +42,12 @@ const PostsContainer: React.FC = () => {
   }
 
   return (
-    <div className="posts-container">
-      <div className="posts-header">
-        <h2 className="posts-title">Posts</h2>
-        <div className="posts-meta">
+    <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-xl font-semibold m-0">Posts</h2>
+        <div>
           {isLoadingPosts && (
-            <span className="loading-indicator">Loading...</span>
+            <span className="text-sm text-gray-500">Loading...</span>
           )}
         </div>
       </div>
@@ -56,7 +56,7 @@ const PostsContainer: React.FC = () => {
         <Loading />
       ) : posts.length > 0 ? (
         <>
-          <div className="posts-grid-wrapper">
+          <div className="mb-8">
             <LayoutFactory
               layout={settings.layout}
               template={settings.template}
@@ -64,7 +64,7 @@ const PostsContainer: React.FC = () => {
             />
           </div>
 
-          <div className="posts-navigation">
+          <div className="mt-6 pt-6 border-t border-gray-200">
             <NavigationFactory
               navigation={settings.navigation}
               currentPage={currentPage}
@@ -76,7 +76,7 @@ const PostsContainer: React.FC = () => {
           </div>
         </>
       ) : (
-        <div className="posts-empty">
+        <div className="text-center py-12 text-gray-500">
           <p>No posts</p>
         </div>
       )}
